@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "@adiwajshing/baileys-md": "github:adiwajshing/baileys#multi-device",
+    "axios": "^0.24.0",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "name": "md-bots",
+  "description": "WhatsApp multi devices bots, with easy adjustment and customization",
+  "version": "0.0.1",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evaasmakula/md-bots.git"
+  },
+  "keywords": [
+    "whatsapp",
+    "multi",
+    "devices"
+  ],
+  "author": "evaasmakula",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evaasmakula/md-bots/issues"
+  },
+  "homepage": "https://github.com/evaasmakula/md-bots#readme"
+}
