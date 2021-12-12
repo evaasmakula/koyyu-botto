@@ -1,7 +1,7 @@
 const { default: makeWASocket, useSingleFileAuthState, DisconnectReason } = require("@adiwajshing/baileys-md")
 const { state, saveState } = useSingleFileAuthState('./login.json');
 const fs = require('fs');
-const logDB = './dblog.json';
+const logDB = './log/Log_quotedMedia.json';
 const handler = require('./handler.js');
 const errorHandler = require("./lib/errorHandler");
 
@@ -11,24 +11,24 @@ const startSock = () => {
     conn.ev.on('messages.upsert', async m => {
         const message = m.messages[0]
 
-        // optional logging get last message received
-        fs.writeFileSync(logDB, JSON.stringify(m));
-
         // send read receipt
         await conn.sendReadReceipt(message.key.remoteJid, message.key.participant, [message.key.id])
-        
-        try {
-            if (!message.message || message.key.fromMe || message.key && message.key.remoteJid == 'status@broadcast') return;
-            if (message.message.ephemeralMessage) {
-                message.message = message.message.ephemeralMessage.message;
+       
+        if(message.key.remoteJid == "status@broadcast"){
+            return;
+        }
+        if (!message.key.fromMe && m.type === 'notify') {
+            
+            // optional logging get last message received
+            fs.writeFileSync(logDB, JSON.stringify(m));
+
+            try {
+                await handler(conn, message);
+            } catch (err) {
+                const error = err.message;
+                console.log(error);
+                await errorHandler(conn, message, error)
             }
-
-            await handler(conn, message);
-        } catch (err) {
-            const error = err.message;
-            console.log(error);
-
-            await errorHandler(conn, message, error)
         }
     })
 
