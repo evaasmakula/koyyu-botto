@@ -1,8 +1,8 @@
 const { default: makeWASocket, useSingleFileAuthState, DisconnectReason } = require("@adiwajshing/baileys-md")
 const { state, saveState } = useSingleFileAuthState('./login.json');
 const fs = require('fs');
-const logDB = './log/Log_quotedMedia.json';
-const handler = require('./handler.js');
+const logDB = './log/Log_VideoMessage.json';
+const handler = require('./lib/handler.js');
 const errorHandler = require("./lib/errorHandler");
 
 const startSock = () => {
@@ -19,7 +19,7 @@ const startSock = () => {
         }
         if (!message.key.fromMe && m.type === 'notify') {
             
-            // optional logging get last message received
+            // optional logging to get last message received
             fs.writeFileSync(logDB, JSON.stringify(m));
 
             try {

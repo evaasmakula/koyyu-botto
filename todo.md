@@ -1,6 +1,7 @@
 # TO DO
 
 - Check out all command
+- check toimg command
 
 ## DONE
 

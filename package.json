@@ -25,6 +25,7 @@
     "@adiwajshing/baileys-md": "github:adiwajshing/baileys#multi-device",
     "@hiyurigi/nlp": "^2.0.0-alpha.3",
     "@sajenid/aksara.js": "^1.0.0-beta.6",
+    "add": "^2.0.6",
     "axios": "^0.24.0",
     "brainly-scraper-v2": "^2.0.9",
     "cheerio": "^1.0.0-rc.10",
