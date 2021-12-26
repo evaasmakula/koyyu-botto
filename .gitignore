@@ -1,7 +1,8 @@
-/login.json
-/test.js
-/package-lock.json
-/node_modules
-/dblog.json
-/yarn.lock
+login.json
+test.js
+package-lock.json
+node_modules
+.temp
+dblog.json
+yarn.lock
 log

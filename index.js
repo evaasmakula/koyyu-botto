@@ -12,22 +12,24 @@ const startSock = () => {
         const message = m.messages[0]
 
         // send read receipt
-        await conn.sendReadReceipt(message.key.remoteJid, message.key.participant, [message.key.id])
-       
+        
         if(message.key.remoteJid == "status@broadcast"){
             return;
         }
+        
         if (!message.key.fromMe && m.type === 'notify') {
             
             // optional logging to get last message received
-            fs.writeFileSync(logDB, JSON.stringify(m));
-
+            // fs.writeFileSync(logDB, JSON.stringify(m));
+            
             try {
                 await handler(conn, message);
+                await conn.sendReadReceipt(message.key.remoteJid, message.key.participant, [message.key.id])
             } catch (err) {
                 const error = err.message;
                 console.log(error);
                 await errorHandler(conn, message, error)
+                await conn.sendReadReceipt(message.key.remoteJid, message.key.participant, [message.key.id])
             }
         }
     })
