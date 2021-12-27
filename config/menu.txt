@@ -1,4 +1,3 @@
-Selamat datang di *EVA BOTS*
 Berikut beberapa perintah yang dapat kamu gunakan.
 
 ╔═[ BASIC ]
@@ -13,4 +12,22 @@ Berikut beberapa perintah yang dapat kamu gunakan.
 ║   ╚ Sticker ke gambar
 ╠ *!togif*
 ║   ╚ Sticker ke Gif
-╚════════
+╚════════   
+
+╔═ [ EDUKASI ]
+║ 
+╠ *!brainly pertanyaamn*
+╠ *!gempa*
+╠ *!yt link*
+╠ *!aksara teks*
+╚════════  
+
+╔═ [ OTHER ]
+║ 
+╠ *!fact*
+╠ *!quotes*
+╠ *!lirik*
+║   ╚ Dari genius lyrics
+╠ *!tl kode bahasa teks*
+║   ╚ !tl ja Selamat Pagi
+╚════════  
