@@ -2,7 +2,7 @@ login.json
 test.js
 package-lock.json
 node_modules
+pnpm-lock.yaml
 .temp
 dblog.json
 yarn.lock
-log
