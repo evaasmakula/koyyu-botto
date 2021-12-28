@@ -13,15 +13,17 @@ const startSock = () => {
         if(message.key.remoteJid == "status@broadcast"){
             return;
         };
+
         
         if (!message.key.fromMe && m.type === 'notify') {
             try {
                 await handler(conn, message);
-                console.log("[INFO] Message sended to recipient");
+                fs.writeFileSync("./log.json", JSON.stringify(message));
+                console.log('\x1b[32m%s\x1b[0m', "[INFO] Message sended to recipient");
                 
             } catch (err) {
                 const error = err.message;
-                console.log(error);
+                console.log('\x1b[31m%s\x1b[0m',error);
                 await errorHandler(conn, message, error)
             };
             // await conn.sendReadReceipt(message.key.remoteJid, message.key.participant, [message.key.id])
@@ -33,7 +35,7 @@ const startSock = () => {
         if (connection === 'close') {
             lastDisconnect.error?.output?.statusCode !== DisconnectReason.loggedOut
                 ? startSock()
-                : console.log('+ connection closed')
+                : console.log('\x1b[31m%s\x1b[0m', '+ connection closed')
         };
     })
 
