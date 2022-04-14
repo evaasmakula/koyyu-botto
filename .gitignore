@@ -1,8 +1,17 @@
-login.json
-test.js
-package-lock.json
 node_modules
-pnpm-lock.yaml
+
+# Debug and secret settings
+.env
+test.js
+
+# session
+session.json
+
+# logs and temo
 .temp
-dblog.json
+logs
+
+# Lockfile
+package-lock.json
+pnpm-lock.yaml
 yarn.lock
